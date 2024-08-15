@@ -1,12 +1,14 @@
 .table-style {
-    width: 100%;
+    width: 30%;
+    height: 333px; 
     table-layout: fixed;
-    background-color: #0071AE28;
+    background-color: #20d444;
+    margin: 0 auto;
 }
 
 .td-style {
     margin: 0;
-    padding: 0;
+    padding: 50;
 }
 
 .button-style {
@@ -14,7 +16,7 @@
     appearance: none;
     border-radius: 0;
     position: relative;
-    height: 63px;
+    height: 111px;
     margin: 0;
     padding: 5px;
     border: 1px solid transparent;
@@ -48,5 +50,5 @@
 }
 
 .input-char-style.active {
-    background-color: #2454c8;
+    background-color: #1fefc9;
 }
