@@ -20,16 +20,13 @@ export default function useSecureKeypad() {
     if (userInput.length < 6) {
       const index = row * 4 + col; // 위치를 인덱스로 변환 (3x4 배열에서)
       const hash = hashes[index]; // 해당 위치의 해시값 가져오기
-
-      if (hash) {
-        setUserInput((prev) => [...prev, hash]); // 해시값이 있을 때만 사용자 입력에 추가
-      }
+      console.log("Hash Value:", hash); // 해시값 출력
+      setUserInput((prev) => [...prev, hash]); // 해시값을 사용자 입력에 추가
     }
   };
 
   useEffect(() => {
     if (userInput.length === 6) {
-      alert(`입력된 해시값들: ${userInput.join(", ")}`); // 해시값들을 알림으로 표시
       setTimeout(() => {
         getSecureKeypad(); // 키패드 재생성
         setUserInput([]); // 사용자 입력 초기화
@@ -41,7 +38,6 @@ export default function useSecureKeypad() {
     states: {
       keypad,
       userInput,
-      hashes, // 해시값 목록도 상태로 반환
     },
     actions: {
       getSecureKeypad,
